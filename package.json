@@ -1,0 +1,25 @@
+{
+  "name": "tictactoe",
+  "version": "1.0.0",
+  "description": "lateTermAssignment",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "watch": "jest --watchAll",
+    "clean": "rm -rf node_modules",
+     "install" : "install --save-dev jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Club15/TicTacToe.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Club15/TicTacToe/issues"
+  },
+  "homepage": "https://github.com/Club15/TicTacToe#readme",
+  "devDependencies": {
+    "jest": "^23.6.0"
+  }
+}
