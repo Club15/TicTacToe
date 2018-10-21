@@ -7,7 +7,7 @@
     "test": "jest",
     "watch": "jest --watchAll",
     "clean": "rm -rf node_modules",
-     "install" : "install --save-dev jest"
+    "heroku-postbuild" : "webpack -p"
   },
   "repository": {
     "type": "git",
