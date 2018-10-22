@@ -7,7 +7,7 @@
     "test": "jest",
     "watch": "jest --watchAll",
     "clean": "rm -rf node_modules",
-    "start": "node app",
+    "start": "node server",
     "heroku-postbuild": "webpack -p",
     "build": "webpack"
   },
