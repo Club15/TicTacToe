@@ -1,5 +1,3 @@
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const CleanWebpackPlugin = require("clean-webpack-plugin");
 const path = require('path');
 
 module.exports = { 
@@ -7,19 +5,5 @@ module.exports = {
  output: {    
  	filename: 'main.js',    
  	path: path.resolve(__dirname, 'dist')  
- },
- plugins: [
-   new HtmlWebpackPlugin({
-     title: "Greeting page"
-   }),
-   new CleanWebpackPlugin (
-     ["dist"]) 
- ],
- devServer: {
-  port: 3000,
-  open: true,
-  proxy: {
-   "/api": "http://localhost:8080"
-  }
  }
 }
