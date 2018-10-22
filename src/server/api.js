@@ -1,7 +1,7 @@
 // src/api.js
 const express = require("express");
 const app = express();
-const greeting = require("./tictactoe");
+const greeting = require("../logic/tictactoe");
 app.get("/tictactoe/:title", (req, res) => {
 
   var greeting_returned = {greeting: "This is " + req.params.title + "!"};
