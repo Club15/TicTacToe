@@ -1,9 +1,16 @@
-//const tictactoe = require("./src/logic/tictactoe");
-//console.log(tictactoe("Tic Tac Toe"));
+const express = require("express");
+const path = require("path");
+const app = express();
+const api = require ("./src/server/api");
 
+app.use(express.static(path.join(__dirname, "dist")));
 
-const app = require("./src/server/api");
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log("Server running on port " + PORT);
+app.use("/api", api);
+
+app.get("*", (req, res) => {
+  res.status(200).send({ error: "Not found" });
 });
+
+app.set("json spaces", 2);
+
+module.exports = app;

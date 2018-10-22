@@ -1,12 +1,21 @@
 // src/api.js
 const express = require("express");
-const app = express();
+const router = express.Router();
 const greeting = require("../logic/tictactoe");
-app.get("/tictactoe/:title", (req, res) => {
 
-  var greeting_returned = {greeting: "This is " + req.params.title + "!"};
-
-  res.status(200);
-  res.send(greeting_returned);
+router.get("/", (req, res) => {
+  res.status(405).send({ error: "GET method not allowed, try OPTIONS."});
 });
-module.exports = app;
+
+router.options("/", (req, res) => {
+  const options = {
+    options: { get: ["/server/tictactoe", "/server/tictactoe/{TITLE}"] }
+  };
+  res.status(200).send(options);
+});
+
+router.get("/tictactoe/:title", (req, res) => {
+  res.status(200).send({ tictactoe: tictactoe(req.params.title) });
+});
+
+module.exports = router;
