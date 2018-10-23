@@ -14,8 +14,12 @@ router.options("/", (req, res) => {
   res.status(200).send(options);
 });
 
-router.get("/tictactoe/:title", (req, res) => {
-  res.status(200).send({ tictactoe: tictactoe(req.params.title) });
+router.get("/tictactoe/", (req, res) => {
+  res.status(200).send({ tictactoe: tictactoe() });
+});
+
+router.get("/tictactoe/mark", (req, res) => {
+  res.status(200).send({ tictactoe: getMark() });
 });
 
 module.exports = router;
