@@ -17,10 +17,10 @@ describe("GET /api", () => {
   });
 });
 
-describe("GET /api/tictactoe/{TITLE}", () => {
+/*describe("GET /api/tictactoe/{TITLE}", () => {
   it("should return an object with the tictactoe attribute", async () => {
     const res = await request(app).get("/api/tictactoe/SomeTitle");
     expect(res.status).toBe(200);
     expect(res.body).toHaveProperty("tictactoe");
   });
-});
+});*/

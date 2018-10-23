@@ -9,7 +9,7 @@ router.get("/", (req, res) => {
 
 router.options("/", (req, res) => {
   const options = {
-    options: { get: ["/server/tictactoe", "/server/tictactoe/{TITLE}"] }
+    options: { get: ["/api/tictactoe", "/api/tictactoe/{TITLE}"] }
   };
   res.status(200).send(options);
 });
