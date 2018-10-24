@@ -11,28 +11,6 @@ jobs:
       - run:
           name: test npm
           command: 'npm test'
-  deploy:
-    docker:
-      - image: buildpack-deps:trusty
-    steps:
-      - checkout
-      - run:
-          name: Deploy Master to Heroku
-          command: |
-            git push https://heroku:$e5cc3e0e-2493-45c2-9d29-922cb2cf0898@git.heroku.com/$gameclub15.git master
-
-workflows:
-  version: 2
-  build-deploy:
-    jobs:
-      - build
-      - deploy:
-          requires:
-            - build
-          filters:
-            branches:
-              only: maste 
-
 
 
   #Þarf að run puppiter test líka ef við náum því  
