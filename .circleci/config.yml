@@ -5,12 +5,12 @@ jobs:
       - image: debian:stretch
     steps:
       - checkout
-      #- run:
-       #   name: installing-npm
-        #  command: npm install
       - run:
-          name: npm testing
-          command: npm test
+          name: update-npm 
+          command: 'sudo npm install -g npm@latest'
+      - run:
+          name: install-npm
+          command: npm install
 
   #Þarf að run puppiter test líka ef við náum því  
   # push to heroku https://circleci.com/integrations/heroku/
