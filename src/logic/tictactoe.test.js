@@ -26,3 +26,13 @@ it("this should return scoreX = 1", () => {
   expect(getXscore()).toBe(1);
   expect(getOscore()).toBe(0);
 });
+
+it("updateTable should return X when updating position 1", () => {
+  expect(updateTable(1).game[1]).toBe('X');
+});
+
+it("updateTable should return X, not O", () => {
+  updateTable(1);
+  flipMark();
+  expect(updateTable(1).game[1]).toBe('X');
+});

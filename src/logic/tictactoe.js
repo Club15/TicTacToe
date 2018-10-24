@@ -2,22 +2,18 @@
   var mark = 'X';
   var scoreO = 0;
   var scoreX = 0;
-  var gridCounter = 0;
   var haveWinner = false;
   var table = ['1','2','3','4','5','6','7','8','9'];
-  var markedBoxes = [];
 
 function tictactoe() {
   var t = getTable();
   var m = getMark();
   var s = getScore();
   var tictactoe = {"game": t, "mark": m, "score": s};
-
   return tictactoe;
 }
 
 getTable = function() {
-  var table = {"table": table};
   return table;
 }
 
@@ -27,7 +23,6 @@ getMark = function() {
 
 getScore = function() {
   var score = {"scoreX": scoreX, "scoreO": scoreO};
-
   return score;
 }
 
@@ -50,7 +45,10 @@ getXscore = function() {
 }
 
 updateTable = function(square) {
-  table[square] = mark;
+  if (table[square] !== 'O' && table[square] !== 'X') {
+    table[square] = mark;
+  }
+  return tictactoe();
 }
 
 updateScore = function() {
@@ -60,6 +58,13 @@ updateScore = function() {
   else {
     scoreO++;
   }
+}
+
+playAgain = function() {
+    mark = 'X';
+    haveWinner = false;
+    table = ['1','2','3','4','5','6','7','8','9'];
+    return tictactoe();
 }
 
 module.exports = tictactoe;
