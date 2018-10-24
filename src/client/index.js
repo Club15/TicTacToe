@@ -1,10 +1,17 @@
 const _ = require("lodash");
 
-function component() {  
- let element = document.createElement('div');  
- //element.innerHTML = _.join(['Hello', 'there!'], ' ');
- element.innerHTML = "<strong> Hi there! Again </strong>";
- return element;
-}
+document.getElementById('getTable').addEventListener('click', getTable);
 
-document.body.appendChild(component());
+ function getTable(){
+ 	console.log("button pressed");
+    
+    fetch('/api/tictactoe')
+    .then(res => 
+        res.json()
+    )
+    .then(function (body) {
+    	console.log(body);
+        document.getElementById('table-content').innerHTML = body.tictactoe.game;
+        console.log("Yaaaay");
+    })
+ }

@@ -9,13 +9,17 @@ router.get("/", (req, res) => {
 
 router.options("/", (req, res) => {
   const options = {
-    options: { get: ["/server/tictactoe", "/server/tictactoe/{TITLE}"] }
+    options: { get: ["/api/tictactoe", "/api/tictactoe/{TITLE}"] }
   };
   res.status(200).send(options);
 });
 
-router.get("/tictactoe/:title", (req, res) => {
-  res.status(200).send({ tictactoe: tictactoe(req.params.title) });
+router.get("/tictactoe/", (req, res) => {
+  res.status(200).send({ tictactoe: tictactoe() });
+});
+
+router.get("/tictactoe/mark", (req, res) => {
+  res.status(200).send({ tictactoe: getMark() });
 });
 
 module.exports = router;

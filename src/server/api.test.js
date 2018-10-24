@@ -17,9 +17,9 @@ describe("GET /api", () => {
   });
 });
 
-describe("GET /api/tictactoe/{TITLE}", () => {
+describe("GET /api/tictactoe/", () => {
   it("should return an object with the tictactoe attribute", async () => {
-    const res = await request(app).get("/api/tictactoe/SomeTitle");
+    const res = await request(app).get("/api/tictactoe/");
     expect(res.status).toBe(200);
     expect(res.body).toHaveProperty("tictactoe");
   });
