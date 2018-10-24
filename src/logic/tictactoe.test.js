@@ -11,4 +11,8 @@ it("testing flipmark", () => {
 
 it("this should return X, since mark starts as X", () => {
   expect(getMark()).toBe('X');
-}); 
+});
+
+it("this should return table object", () => {
+  expect(getTable()).not.toBeNull();
+});

@@ -13,6 +13,12 @@ function tictactoe()
   return tictactoe;
 }
 
+getTable = function()
+{
+  var table = {"table": table};
+  return table;
+}
+
 getMark = function() {
   return mark;
 }
@@ -26,5 +32,7 @@ flipMark = function() {
   }
   return mark;
 }
+
+
 
 module.exports = tictactoe;
