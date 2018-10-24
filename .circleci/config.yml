@@ -1,8 +1,10 @@
 version: 2
 jobs:
   build:
+  deploy:
     docker:
       - image: circleci/node:8.12.0
+      - image: buildpack-deps:trusty
     steps:
       - checkout
       - run:
@@ -11,15 +13,11 @@ jobs:
       - run:
           name: test npm
           command: 'npm test'
-  deploy:
-    docker:
-      - image: buildpack-deps:trusty
-    steps:
-      - checkout
-      - run:
+       - run:
           name: Deploy Master to Heroku
           command: |
             git push https://heroku:$e5cc3e0e-2493-45c2-9d29-922cb2cf0898@git.heroku.com/$gameclub15.git master
+
 
 workflows:
   version: 2
