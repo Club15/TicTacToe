@@ -7,10 +7,10 @@ jobs:
       - checkout
       - run:
           name: update-npm 
-          command: 'sudo npm install -g npm@latest'
+          command: 'npm install'
       - run:
-          name: install-npm
-          command: npm install
+          name: test npm
+          command: 'npm test' 
 
   #Þarf að run puppiter test líka ef við náum því  
   # push to heroku https://circleci.com/integrations/heroku/
