@@ -16,3 +16,7 @@ it("this should return X, since mark starts as X", () => {
 it("this should return table object", () => {
   expect(getTable()).not.toBeNull();
 });
+
+it("this should return score object", () => {
+  expect(getScore()).not.toBeNull();
+});

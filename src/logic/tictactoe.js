@@ -7,20 +7,24 @@
   var table = ['1','2','3','4','5','6','7','8','9'];
   var markedBoxes = [];
 
-function tictactoe()
-{
+function tictactoe() {
   var tictactoe = {"game": table, "mark": mark};
   return tictactoe;
 }
 
-getTable = function()
-{
+getTable = function() {
   var table = {"table": table};
   return table;
 }
 
 getMark = function() {
   return mark;
+}
+
+getScore = function() {
+  var score = {"scoreX": scoreX, "scoreO": scoreO};
+
+  return score;
 }
 
 flipMark = function() {
