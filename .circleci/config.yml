@@ -2,13 +2,18 @@ version: 2
 jobs:
   build:
     docker:
-      - image: debian:stretch
+      - image: circleci/node:8.12.0
     steps:
       - checkout
       - run:
-          name: Greeting
-          command: echo Hello, world.
+          name: update-npm 
+          command: 'npm install'
       - run:
-          name: Print the Current Time
-          command: date
+          name: test npm
+          command: 'npm test' 
+
+  #Þarf að run puppiter test líka ef við náum því  
+  # push to heroku https://circleci.com/integrations/heroku/
+
+
 
