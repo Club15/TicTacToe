@@ -14,17 +14,26 @@ As a user I want to be able to:
 
 ## Logic Design
 
-Breytur fyrir O og X "mark = 'X'", hún byrjar á X
-Breyta sem heldur utan um stigin "scoreO" og "scoreX". Breyturnar byrja í 0.
-Breyta sem telur hversu margir reitir fullir "gridCounter".
-Breyta sem segir ef það er kominn vinningshafi "haveWinner".
+For first requirement: 
+	* we are going to make an array to keep track of the gameboard
+	* we ceate a function that returns the array
 
-array sem heldur utan um borðið/gridið
+For the second requirement:
+	* we create a variable that keeps track on whoes turn it is
+	* we create a function that flips the variable between X and O
+	* we create a function that returns who's the next player
 
-function sem flippar mark milli X og O
-function sem hreinsar borðið / newgame
-function sem hækkar grid coutnerinn
-function sem tékkar hvort einhver sé búinn að vinna
-function sem setur O og X í reit sem búið er að klikka á
-function sem hækkar skorið hjá O og X
-function sem tékkar hvort þa sé búið að klikka á reitinn
+For the third requirement:
+	* we create two variables, one for X and one for O, too keep track on players score
+	* we creata a function that increments the score of the winner by one
+	* we create a function that returns the score of both players
+
+For the fourth requirement:
+	* we create a function that takes the number of the square that has been marked as an argument and updates the gameboard array
+	* we create a fucntion that checks if there is a winner
+
+For the fifth requirement:
+	* we create a function that resets the array and puts the player to X
+
+For the sixth requirement:
+	* we create a function that resets the array, player and score to zero
