@@ -5,9 +5,9 @@ jobs:
       - image: debian:stretch
     steps:
       - checkout
-      - run:
-          name: installing-npm
-          command: npm install
+      #- run:
+       #   name: installing-npm
+        #  command: npm install
       - run:
           name: npm testing
           command: npm test
