@@ -4,9 +4,9 @@ document.getElementById('getTable').addEventListener('click', getTable);
 
  function getTable(){
  	console.log("button pressed");
-    
+
     fetch('/api/tictactoe')
-    .then(res => 
+    .then(res =>
         res.json()
     )
     .then(function (body) {
@@ -15,3 +15,4 @@ document.getElementById('getTable').addEventListener('click', getTable);
         console.log("Yaaaay");
     })
  }
+ 

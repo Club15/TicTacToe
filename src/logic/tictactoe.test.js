@@ -20,3 +20,9 @@ it("this should return table object", () => {
 it("this should return score object", () => {
   expect(getScore()).not.toBeNull();
 });
+
+it("this should return scoreX = 1", () => {
+  updateScore();
+  expect(getXscore()).toBe(1);
+  expect(getOscore()).toBe(0);
+});

@@ -8,7 +8,11 @@
   var markedBoxes = [];
 
 function tictactoe() {
-  var tictactoe = {"game": table, "mark": mark};
+  var t = getTable();
+  var m = getMark();
+  var s = getScore();
+  var tictactoe = {"game": t, "mark": m, "score": s};
+
   return tictactoe;
 }
 
@@ -37,6 +41,25 @@ flipMark = function() {
   return mark;
 }
 
+getOscore = function() {
+  return scoreO;
+}
 
+getXscore = function() {
+  return scoreX;
+}
+
+updateTable = function(square) {
+  table[square] = mark;
+}
+
+updateScore = function() {
+  if(mark === "X") {
+    scoreX++;
+  }
+  else {
+    scoreO++;
+  }
+}
 
 module.exports = tictactoe;
