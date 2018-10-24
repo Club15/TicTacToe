@@ -1,5 +1,17 @@
 # Design Report
 
+## User Requirements
+
+As a user I want to be able to:
+1. see the gameboard so that I can play the game
+2. see whos turn it is so that I can know when it's my turn
+3. see the score so I know if I am winning
+4. click on the square on the gameboard to make my move
+5. click a play again button when the game is over to start a new game
+6. click a restart button to start a new game and setting the scores to zero
+
+
+
 ## Logic Design
 
 Breytur fyrir O og X "mark = 'X'", hún byrjar á X
