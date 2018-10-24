@@ -8,7 +8,9 @@
     "watch": "jest --watchAll",
     "clean": "rm -rf node_modules",
     "start": "node server",
+    "server": "webpack-dev-server",
     "build": "webpack",
+    "dev": "npm run start | npm run server",
     "heroku-postbuild": "webpack -p"
   },
   "repository": {
