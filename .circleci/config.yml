@@ -3,7 +3,6 @@ jobs:
   build:
     docker:
       - image: circleci/node:8.12.0
-      - image: debian:stretch
     steps:
       - checkout
       - run:
