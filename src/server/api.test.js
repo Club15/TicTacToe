@@ -24,3 +24,11 @@ describe("GET /api/tictactoe/", () => {
     expect(res.body).toHaveProperty("tictactoe");
   });
 });
+
+describe("POST /api/updateTable/", () => {
+  it("should return an object with the tictactoe attribute", async () => {
+    const res = await request(app).get("/api/tictactoe/");
+    expect(res.status).toBe(200);
+    expect(res.body).toHaveProperty("tictactoe");
+  });
+});
