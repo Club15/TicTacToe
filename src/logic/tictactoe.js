@@ -67,4 +67,11 @@ playAgain = function() {
     return tictactoe();
 }
 
+resetGame = function() {
+  playAgain();
+  scoreO = 0;
+  scoreX = 0;
+  return tictactoe();
+}
+
 module.exports = tictactoe;

@@ -1,7 +1,7 @@
 const tictactoe = require("./tictactoe");
 
 beforeEach(function() {
- 	playAgain();
+ 	resetGame();
 });
 
 test("returns text", () => {
@@ -67,4 +67,9 @@ test("playAgain should clean table", () => {
 test("playAgain should turn mark into X", () => {
   flipMark();
   expect(playAgain().mark).toBe('X');
+});
+
+test("resetGame should set scoreO and scoreX to 0", () => {
+  expect(resetGame().score.scoreX).toBe(0);
+  expect(resetGame().score.scoreO).toBe(0);
 });
