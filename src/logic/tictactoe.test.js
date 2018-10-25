@@ -143,3 +143,17 @@ test("isWinner should return false, if array is marked X in index 3,7,8", () => 
   updateTable(8);
   expect(isWinner()).toBe(false);
 });
+
+test("isTie should return true, if array all array is X", () => {
+  for (var i = 0; i < 9; i++) {
+  	updateTable(i);
+  }
+  expect(isTie()).toBe(true);
+});
+
+test("isTie should return false, if the array index aren't all X", () => {
+  for (var i = 0; i < 8; i++) {
+  	updateTable(i);
+  }
+  expect(isTie()).toBe(false);
+});

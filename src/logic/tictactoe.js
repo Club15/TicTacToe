@@ -4,6 +4,7 @@
   var scoreX = 0;
   var haveWinner = false;
   var table = ['0','1','2','3','4','5','6','7','8'];
+  var count = 0;
 
 function tictactoe() {
   var t = getTable();
@@ -46,6 +47,7 @@ getXscore = function() {
 
 updateTable = function(square) {
   if (table[square] !== 'O' && table[square] !== 'X') {
+    count++; 
     table[square] = mark;
   }
   return tictactoe();
@@ -64,6 +66,7 @@ playAgain = function() {
     mark = 'X';
     haveWinner = false;
     table = ['0','1','2','3','4','5','6','7','8'];
+    count = 0;
     return tictactoe();
 }
 
@@ -90,6 +93,15 @@ isWinner = function() {
     return true;
   } 
   return false;
+}
+
+isTie = function() {
+  if (count < 9) {
+    return false;
+  }
+  else {
+    return true;
+  }
 }
 
 module.exports = tictactoe;
