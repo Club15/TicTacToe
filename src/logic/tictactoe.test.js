@@ -73,3 +73,73 @@ test("resetGame should set scoreO and scoreX to 0", () => {
   expect(resetGame().score.scoreX).toBe(0);
   expect(resetGame().score.scoreO).toBe(0);
 });
+
+test("isWinner should return true, if array is marked X in index 0,1,2", () => {
+  updateTable(0);
+  updateTable(1);
+  updateTable(2);
+  expect(isWinner()).toBe(true);
+});
+
+test("isWinner should return true, if array is marked X in index 3,4,5", () => {
+  updateTable(3);
+  updateTable(4);
+  updateTable(5);
+  expect(isWinner()).toBe(true);
+});
+
+test("isWinner should return true, if array is marked X in index 6,7,8", () => {
+  updateTable(6);
+  updateTable(7);
+  updateTable(8);
+  expect(isWinner()).toBe(true);
+});
+
+test("isWinner should return true, if array is marked X in index 0,3,6", () => {
+  updateTable(0);
+  updateTable(3);
+  updateTable(6);
+  expect(isWinner()).toBe(true);
+});
+
+test("isWinner should return true, if array is marked X in index 1,4,7", () => {
+  updateTable(1);
+  updateTable(4);
+  updateTable(7);
+  expect(isWinner()).toBe(true);
+});
+
+test("isWinner should return true, if array is marked X in index 2,5,8", () => {
+  updateTable(2);
+  updateTable(5);
+  updateTable(8);
+  expect(isWinner()).toBe(true);
+});
+
+test("isWinner should return true, if array is marked X in index 0,4,8", () => {
+  updateTable(0);
+  updateTable(4);
+  updateTable(8);
+  expect(isWinner()).toBe(true);
+});
+
+test("isWinner should return true, if array is marked X in index 2,4,6", () => {
+  updateTable(2);
+  updateTable(4);
+  updateTable(6);
+  expect(isWinner()).toBe(true);
+});
+
+test("isWinner should return false, if array is marked X in index 1,4,6", () => {
+  updateTable(1);
+  updateTable(4);
+  updateTable(6);
+  expect(isWinner()).toBe(false);
+});
+
+test("isWinner should return false, if array is marked X in index 3,7,8", () => {
+  updateTable(3);
+  updateTable(7);
+  updateTable(8);
+  expect(isWinner()).toBe(false);
+});

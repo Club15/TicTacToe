@@ -74,4 +74,22 @@ resetGame = function() {
   return tictactoe();
 }
 
+isWinner = function() {
+  for (var i = 0; i < 3; i++) {
+    if (table[i*3] == mark && table[i*3+1] == mark && table[i*3+2] == mark) {
+      return true;
+    }
+    if (table[i] == mark && table[i+3] == mark && table[i+6] == mark) {
+      return true;
+    }
+  }
+  if (table[0] == mark && table[4] == mark && table[8] == mark) {
+    return true;
+  } 
+  if (table[2] == mark && table[4] == mark && table[6] == mark) {
+    return true;
+  } 
+  return false;
+}
+
 module.exports = tictactoe;
