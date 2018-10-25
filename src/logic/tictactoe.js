@@ -3,7 +3,7 @@
   var scoreO = 0;
   var scoreX = 0;
   var haveWinner = false;
-  var table = ['1','2','3','4','5','6','7','8','9'];
+  var table = ['0','1','2','3','4','5','6','7','8'];
 
 function tictactoe() {
   var t = getTable();
@@ -62,8 +62,9 @@ updateScore = function() {
 
 playAgain = function() {
     mark = 'X';
+    console.log(mark);
     haveWinner = false;
-    table = ['1','2','3','4','5','6','7','8','9'];
+    table = ['0','1','2','3','4','5','6','7','8'];
     return tictactoe();
 }
 
