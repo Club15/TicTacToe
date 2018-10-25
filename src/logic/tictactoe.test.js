@@ -8,21 +8,30 @@ test("returns text", () => {
    expect(tictactoe()).not.toBeNull();
 });
 
-test("testing flipmark", () => {
+test("flipMark should return first O, then X", () => {
   expect(flipMark()).toBe('O');
   expect(flipMark()).toBe('X');
 })
 
-test("this should return X, since mark starts as X", () => {
+test("getMark should return X", () => {
   expect(getMark()).toBe('X');
 });
 
-test("this should return table object", () => {
-  expect(getTable()).not.toBeNull();
+test("getTable should return a array with string from 0 to 8", () => {
+  expect(getTable()[0]).toBe('0');
+  expect(getTable()[1]).toBe('1');
+  expect(getTable()[2]).toBe('2');
+  expect(getTable()[3]).toBe('3');
+  expect(getTable()[4]).toBe('4');
+  expect(getTable()[5]).toBe('5');
+  expect(getTable()[6]).toBe('6');
+  expect(getTable()[7]).toBe('7');
+  expect(getTable()[8]).toBe('8');
 });
 
-test("this should return score object", () => {
-  expect(getScore()).not.toBeNull();
+test("getScore() should return 0 for both score X and O", () => {
+  expect(getScore().scoreX).toBe(0);
+  expect(getScore().scoreO).toBe(0);
 });
 
 test("getXscore should return 1", () => {
