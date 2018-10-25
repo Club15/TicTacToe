@@ -10,9 +10,19 @@ document.getElementById('getTable').addEventListener('click', getTable);
         res.json()
     )
     .then(function (body) {
+    	var table = document.getElementById('table');
     	console.log(body);
-        document.getElementById('table-content').innerHTML = body.tictactoe.game;
-        console.log("Yaaaay");
+    	var game = body.tictactoe.game;
+    	console.log(table);
+    	console.log(game);
+    	for (var i = 0; i < game.length; i++)  {
+    		var square = document.createElement('div');
+    		square.id = i;
+    		square.innerHTML = game[i];
+    		table.appendChild(square);
+    	}
     })
  }
+
+ getTable();
  
