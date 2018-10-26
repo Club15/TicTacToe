@@ -52,8 +52,7 @@ flipMark = function() {
   return mark;
 }
 
-updateGame = function(body) {
-  var square = body.square;
+updateGame = function(square) {
   if (updateTable(square)) {
     if (isWinner()) {
       updateScore();
