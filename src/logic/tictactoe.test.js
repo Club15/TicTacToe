@@ -4,32 +4,23 @@ beforeEach(function() {
  	resetGame();
 });
 
-test("returns text", () => {
+test("tictactoe should return an object", () => {
    expect(tictactoe()).not.toBeNull();
 });
 
-test("flipMark should return first O, then X", () => {
-  expect(flipMark()).toBe('O');
-  expect(flipMark()).toBe('X');
-})
-
-test("getMark should return X", () => {
-  expect(getMark()).toBe('X');
+test("getTable should return a array with 9 empty strings", () => {
+  expect(getTable()[0]).toBe('');
+  expect(getTable()[1]).toBe('');
+  expect(getTable()[2]).toBe('');
+  expect(getTable()[3]).toBe('');
+  expect(getTable()[4]).toBe('');
+  expect(getTable()[5]).toBe('');
+  expect(getTable()[6]).toBe('');
+  expect(getTable()[7]).toBe('');
+  expect(getTable()[8]).toBe('');
 });
 
-test("getTable should return a array with string from 0 to 8", () => {
-  expect(getTable()[0]).toBe('0');
-  expect(getTable()[1]).toBe('1');
-  expect(getTable()[2]).toBe('2');
-  expect(getTable()[3]).toBe('3');
-  expect(getTable()[4]).toBe('4');
-  expect(getTable()[5]).toBe('5');
-  expect(getTable()[6]).toBe('6');
-  expect(getTable()[7]).toBe('7');
-  expect(getTable()[8]).toBe('8');
-});
-
-test("getScore() should return 0 for both score X and O", () => {
+test("getScore should return 0 for both score X and O", () => {
   expect(getScore().scoreX).toBe(0);
   expect(getScore().scoreO).toBe(0);
 });
@@ -63,32 +54,55 @@ test("getMessage should return The winner is X!", () => {
   expect(getMessage()).toBe('The winner is X!');
 });
 
-test("updateGame should return X when updating position 1", () => {
-  expect(updateGame(1).game[1]).toBe('X');
+test("getMessage should return a tie", () => {
+  updateGame('1');
+  updateGame('2');
+  updateGame('3');
+  updateGame('4');
+  updateGame('6');
+  updateGame('5');
+  updateGame('9');
+  updateGame('0');
+  updateGame('8');
+  expect(getMessage()).toBe("It's a tie!");
 });
 
-test("updateGame should return X for position 2", () => {
-  var object = {"object": '2'}
-  expect(updateGame(object.object).game[2]).toBe('X');
+test("flipMark should return first O, then X", () => {
+  expect(flipMark()).toBe('O');
+  expect(flipMark()).toBe('X');
 });
 
-test("updateGame should return X, not O", () => {
+test("updateGame should mark O, because X has already done", () => {
+  updateGame('1');
+  expect(getMark()).toBe('O');
+});
+
+test("updateGame should return X, not O at position 1 (since we already put X in position 1)", () => {
   updateGame(1);
   flipMark();
   expect(updateGame(1).game[1]).toBe('X');
+});
+
+test("updateTable should true", () => {
+  expect(updateTable('1')).toBe(true);
+});
+
+test("updateTable should false, because square 1 is already taken", () => {
+  updateTable('1');
+  flipMark();
+  expect(updateTable('1')).toBe(false);
 });
 
 test("playAgain should clean table", () => {
   updateTable(1);
   updateTable(2);
   updateTable(3);
-  expect(playAgain().game[1]).toBe('1');
-  expect(playAgain().game[2]).toBe('2');
-  expect(playAgain().game[3]).toBe('3');
+  expect(playAgain().game[1]).toBe('');
+  expect(playAgain().game[2]).toBe('');
+  expect(playAgain().game[3]).toBe('');
 });
 
 test("playAgain should turn mark into X", () => {
-  flipMark();
   expect(playAgain().message).toBe('Its X turn!');
 });
 

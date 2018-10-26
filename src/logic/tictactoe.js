@@ -4,7 +4,7 @@
   var scoreX = 0;
   var haveWinner = false;
   var message = 'Its X turn!';
-  var table = ['0','1','2','3','4','5','6','7','8'];
+  var table = ['','','','','','','','',''];
   var count = 0;
 
 //returns the table, who's turn it is and scores
@@ -19,11 +19,6 @@ tictactoe = function() {
 //returns the table
 getTable = function() {
   return table;
-}
-
-//returns who's turn it is (mark)
-getMark = function() {
-  return mark;
 }
 
 //returns the scores (scoreX and scoreO)
@@ -42,71 +37,82 @@ getXscore = function() {
   return scoreX;
 }
 
+//returns the game message
 getMessage = function() {
   return message;
 }
 
+//return the mark (current player)
+getMark = function() {
+  return mark;
+}
+
 //flips the player (mark) who's turn it is
 flipMark = function() {
-  if(mark === 'X') {
-    mark = 'O';
+  if(mark === 'X') {                                //If it was Xs turn 
+    mark = 'O';                                     //Then now it's O turn
   }
-  else {
-    mark = 'X';
+  else {                                            //if it was Os turn
+    mark = 'X';                                     //Then now it's X turn
   }
   return mark;
 }
 
+//This functions controls the game 
 updateGame = function(square) {
-  if (!haveWinner) {
-    if (updateTable(square)) {
-      if (isWinner()) {
-        message = "The winner is " + mark + "!";
-        haveWinner = true;
-        updateScore();
+  if (!haveWinner) {                                //if there isn't a winner
+    if (updateTable(square)) {                      //check if the square wasnt taken, and update table
+      if (isWinner()) {                             //if there is a winner
+        message = "The winner is " + mark + "!";    //let players know who's the winner
+        haveWinner = true;                          //mark that there is a winner
+        updateScore();                              //update the score to the player who won by one
       }
-      else {
-        flipMark();
-        message = "Its " + mark + " turn!"
+      else if(isTie()) {                            //if there is a tie
+        message = "It's a tie!"                     //let players know there is a tie
+      }
+      else {                                        //if there is nether a winner not a tie
+        flipMark();                                 //change player's turn
+        message = "Its " + mark + " turn!"          //let the players know who's turn it is
       }
     }
   }
   return tictactoe();
 }
 
-//updates an index (square) to ether X or O in the table array (table)
+//updates an index (square) to ether X or O in the table array
 updateTable = function(square) {
-  //square = Math.floor(Math.random() * (8 - 0 + 1)) + 0;
-  var i = parseInt(square);
-  if (table[i] !== 'O' && table[i] !== 'X') {
-    count++; 
-    table[i] = mark;
-    return true;
+  var i = parseInt(square);   
+  if (table[i] !== 'O' && table[i] !== 'X') {       //If the square hasn't already been clicked (marked)
+    table[i] = mark;                                //mark the square
+    count++;                                        //set the counter of taken squares by one
+    return true;                                    //return true (update was successful)
   }
-  return false;
+  return false;                                     //if square was marked, return false
 }
 
 //updates the score for ether player O or X
 updateScore = function() {
-  if(mark === "X") {
-    scoreX++;
+  if(mark === "X") {                                //if the player who one is X
+    scoreX++;                                       //increment his score by one
   }
-  else {
-    scoreO++;
+  else {                                            //otherwise the player is O
+    scoreO++;                                       //increment his score by one
   }
 }
 
 //restarts the game, but keeps the scores
+//reset variables to initial values,except for X- and Oscores.
 playAgain = function() {
-    mark = 'X';
+    mark = 'X';                                     
     haveWinner = false;
-    table = ['0','1','2','3','4','5','6','7','8'];
+    table = ['','','','','','','','',''];
     count = 0;
     message = "Its X turn!";
     return tictactoe();
 }
 
 //restart the whole game
+//reset all variables to inital values;
 resetGame = function() {
   playAgain();
   scoreO = 0;
@@ -114,7 +120,7 @@ resetGame = function() {
   return tictactoe();
 }
 
-//checks if the player (mark) is a winner
+//checks if there is a winner
 isWinner = function() {
   for (var i = 0; i < 3; i++) {
     if (table[i*3] == mark && table[i*3+1] == mark && table[i*3+2] == mark) {
