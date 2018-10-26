@@ -31,6 +31,7 @@ function updateTable(game) {
 }
 
 function updateMessage(message) {
+    console.log(message);
     document.getElementById("msg").innerHTML = message;
 }
 
@@ -45,21 +46,9 @@ function addMove(number){
     var square = number;
     fetch("/api/tictactoe/addTurn/" + square)
     .then(res => res.json())
-    .then(res => updateGame(res.tictactoe.game))
+    .then(res => updateGame(res.tictactoe))
     .catch(error => console.log('Error:', error));
 };
-
-/*function addMove(number){
-    var square = {square : number};
-    fetch('/api/tictactoe/addTurn', {
-        method: "POST",
-        body: JSON.stringify(square),
-        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json'}
-    })
-    .then(res => res.json())
-    .then(res => updateTable(res.tictactoe.game))
-    .catch(error => console.log('Error:', error));
-};*/
 
 document.getElementById("playAgain").onclick = function(){
 	fetch('/api/tictactoe/playAgain')
