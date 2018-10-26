@@ -3,6 +3,7 @@
   var scoreO = 0;
   var scoreX = 0;
   var haveWinner = false;
+  var message = 'Its X turn!';
   var table = ['0','1','2','3','4','5','6','7','8'];
   var count = 0;
 
@@ -11,7 +12,8 @@ tictactoe = function() {
   var t = getTable();
   var m = getMark();
   var s = getScore();
-  var tictactoe = {"game": t, "mark": m, "score": s};
+  var msg = getMessage();
+  var tictactoe = {"game": t, "mark": m, "score": s, "message": msg};
   return tictactoe;
 }
 
@@ -41,6 +43,10 @@ getXscore = function() {
   return scoreX;
 }
 
+getMessage = function() {
+  return message;
+}
+
 //flips the player (mark) who's turn it is
 flipMark = function() {
   if(mark === 'X') {
@@ -53,12 +59,17 @@ flipMark = function() {
 }
 
 updateGame = function(square) {
-  if (updateTable(square)) {
-    if (isWinner()) {
-      updateScore();
-    }
-    else {
-      flipMark();
+  if (!haveWinner) {
+    if (updateTable(square)) {
+      if (isWinner()) {
+        message = "The winner is " + mark + "!";
+        haveWinner = true;
+        updateScore();
+      }
+      else {
+        flipMark();
+        message = "Its " + mark + " turn!"
+      }
     }
   }
   return tictactoe();
@@ -92,6 +103,7 @@ playAgain = function() {
     haveWinner = false;
     table = ['0','1','2','3','4','5','6','7','8'];
     count = 0;
+    message = "Its X turn!";
     return tictactoe();
 }
 

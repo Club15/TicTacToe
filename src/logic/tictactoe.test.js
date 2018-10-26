@@ -45,6 +45,24 @@ test("getOscore should return 1", () => {
   expect(getOscore()).toBe(1);
 });
 
+test("getMessage should return Its X turn", () => {
+  expect(getMessage()).toBe('Its X turn!');
+});
+
+test("getMessage should return Its O turn", () => {
+  updateGame('1');
+  expect(getMessage()).toBe('Its O turn!');
+});
+
+test("getMessage should return The winner is X!", () => {
+  updateGame('0');  //x turn
+  updateGame('3');  //o turn
+  updateGame('1');  //x turn
+  updateGame('4');  //o turn
+  updateGame('2');  //x turn
+  expect(getMessage()).toBe('The winner is X!');
+});
+
 test("updateGame should return X when updating position 1", () => {
   expect(updateGame(1).game[1]).toBe('X');
 });
@@ -158,7 +176,7 @@ test("isTie should return true, if array all array is X", () => {
 
 test("isTie should return false, if the array index aren't all X", () => {
   for (var i = 0; i < 8; i++) {
-  	updateTable(i);
+  	updateGame(i);
   }
   expect(isTie()).toBe(false);
 });
