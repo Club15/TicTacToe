@@ -105,7 +105,7 @@ playAgain = function() {
     count = 0;
     message = "Its X turn!";
     return tictactoe();
-}u
+}
 
 //restart the whole game
 resetGame = function() {
