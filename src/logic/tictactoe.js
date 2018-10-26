@@ -52,9 +52,13 @@ flipMark = function() {
   return mark;
 }
 
-updateGame = function(square) {
+updateGame = function(body) {
+  var square = body.square;
   if (updateTable(square)) {
-    if (!isWinner()) {
+    if (isWinner()) {
+      updateScore();
+    }
+    else {
       flipMark();
     }
   }
@@ -63,7 +67,7 @@ updateGame = function(square) {
 
 //updates an index (square) to ether X or O in the table array (table)
 updateTable = function(square) {
-  square = Math.floor(Math.random() * (8 - 0 + 1)) + 0;
+  //square = Math.floor(Math.random() * (8 - 0 + 1)) + 0;
   var i = parseInt(square);
   if (table[i] !== 'O' && table[i] !== 'X') {
     count++; 

@@ -6,18 +6,34 @@ function getTable(){
         res.json()
     )
     .then(function (body) {
-    	var game = body.tictactoe.game;
-    	updateTable(game);
+    	var tictactoe = body.tictactoe;
+    	updateGame(tictactoe);
     })
 }
 getTable();
 
+function updateGame(tictactoe) {
+	var game = tictactoe.game;
+	var mark = tictactoe.mark;
+	var score = tictactoe.score;
+	updateTable(game);
+	updateMark(mark);
+	updateScore(score);
+}
+
 function updateTable(game) {
-	console.log(game);
 	for (var i = 0; i < game.length; i++)  {
     	var square = document.getElementById(i);
     	square.innerHTML = game[i];
     }
+}
+
+function updateMark(mark) {
+	console.log(mark);
+}
+
+function updateScore(score) {
+	console.log(score);
 }
 
 function addMove(number){
@@ -38,8 +54,8 @@ document.getElementById("playAgain").onclick = function(){
         res.json()
     )
     .then(function (body) {
-    	var game = body.tictactoe.game;
-    	updateTable(game);
+    	var tictactoe = body.tictactoe;
+    	updateGame(tictactoe);
     })
 };
 
@@ -49,8 +65,8 @@ document.getElementById("resetGame").onclick = function(){
         res.json()
     )
     .then(function (body) {
-    	var game = body.tictactoe.game;
-    	updateTable(game);
+    	var tictactoe = body.tictactoe;
+    	updateGame(tictactoe);
     })
 };
 

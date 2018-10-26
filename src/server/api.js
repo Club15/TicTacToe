@@ -22,7 +22,7 @@ router.get("/tictactoe/", (req, res) => {
 
 router.post("/tictactoe/addTurn", (req, res) => {	
   //var square = req.body.square;
-  res.status(200).send({ tictactoe: updateGame(req.square)});
+  res.status(200).send({ tictactoe: updateGame(req.params) });
 });
 
 router.get("/tictactoe/playAgain", (req, res) => {
