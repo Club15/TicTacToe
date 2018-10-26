@@ -87,10 +87,10 @@ test("playAgain should clean table", () => {
   expect(playAgain().game[3]).toBe('3');
 });
 
-/*test("playAgain should turn mark into X", () => {
+test("playAgain should turn mark into X", () => {
   flipMark();
-  expect(playAgain().mark).toBe('X');
-});*/
+  expect(playAgain().message).toBe('Its X turn!');
+});
 
 test("resetGame should set scoreO and scoreX to 0", () => {
   expect(resetGame().score.scoreX).toBe(0);
