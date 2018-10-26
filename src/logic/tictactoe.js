@@ -3,6 +3,7 @@
   var scoreO = 0;
   var scoreX = 0;
   var haveWinner = false;
+  var message = 'Its X turn!';
   var table = ['0','1','2','3','4','5','6','7','8'];
   var count = 0;
 
@@ -39,6 +40,10 @@ getOscore = function() {
 //returns the score for player X
 getXscore = function() {
   return scoreX;
+}
+
+getMessage = function() {
+  return message;
 }
 
 //flips the player (mark) who's turn it is

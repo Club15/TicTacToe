@@ -45,6 +45,10 @@ test("getOscore should return 1", () => {
   expect(getOscore()).toBe(1);
 });
 
+test("getMessage should return Its X turn!", () => {
+  expect(getMessage()).toBe("Its X turn!");
+});
+
 test("updateTable should return X when updating position 1", () => {
   expect(updateTable(1).game[1]).toBe('X');
 });
