@@ -25,7 +25,6 @@ function updateGame(tictactoe) {
 function updateTable(game) {
 	for (var i = 0; i < game.length; i++)  {
     	var square = document.getElementById('s'+ i);
-      console.log(square);
     	square.innerHTML = game[i];
     }
 }

@@ -4,7 +4,7 @@
   var scoreX = 0;
   var haveWinner = false;
   var message = 'Its X turn!';
-  var table = ['0','1','2','3','4','5','6','7','8'];
+  var table = ['','','','','','','','',''];
   var count = 0;
 
 //returns the table, who's turn it is and scores
@@ -65,6 +65,9 @@ updateGame = function(square) {
         haveWinner = true;
         updateScore();
       }
+      else if(isTie()) {
+        message = "It's a tie!"
+      }
       else {
         flipMark();
         message = "Its " + mark + " turn!"
@@ -100,7 +103,7 @@ updateScore = function() {
 playAgain = function() {
     mark = 'X';
     haveWinner = false;
-    table = ['0','1','2','3','4','5','6','7','8'];
+    table = ['','','','','','','','',''];
     count = 0;
     message = "Its X turn!";
     return tictactoe();

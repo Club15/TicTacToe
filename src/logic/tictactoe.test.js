@@ -17,16 +17,16 @@ test("getMark should return X", () => {
   expect(getMark()).toBe('X');
 });
 
-test("getTable should return a array with string from 0 to 8", () => {
-  expect(getTable()[0]).toBe('0');
-  expect(getTable()[1]).toBe('1');
-  expect(getTable()[2]).toBe('2');
-  expect(getTable()[3]).toBe('3');
-  expect(getTable()[4]).toBe('4');
-  expect(getTable()[5]).toBe('5');
-  expect(getTable()[6]).toBe('6');
-  expect(getTable()[7]).toBe('7');
-  expect(getTable()[8]).toBe('8');
+test("getTable should return a array with 9 empty strings", () => {
+  expect(getTable()[0]).toBe('');
+  expect(getTable()[1]).toBe('');
+  expect(getTable()[2]).toBe('');
+  expect(getTable()[3]).toBe('');
+  expect(getTable()[4]).toBe('');
+  expect(getTable()[5]).toBe('');
+  expect(getTable()[6]).toBe('');
+  expect(getTable()[7]).toBe('');
+  expect(getTable()[8]).toBe('');
 });
 
 test("getScore() should return 0 for both score X and O", () => {
@@ -82,13 +82,12 @@ test("playAgain should clean table", () => {
   updateTable(1);
   updateTable(2);
   updateTable(3);
-  expect(playAgain().game[1]).toBe('1');
-  expect(playAgain().game[2]).toBe('2');
-  expect(playAgain().game[3]).toBe('3');
+  expect(playAgain().game[1]).toBe('');
+  expect(playAgain().game[2]).toBe('');
+  expect(playAgain().game[3]).toBe('');
 });
 
 test("playAgain should turn mark into X", () => {
-  flipMark();
   expect(playAgain().message).toBe('Its X turn!');
 });
 
