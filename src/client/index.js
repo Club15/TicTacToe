@@ -45,7 +45,7 @@ function addMove(number){
     var square = number;
     fetch("/api/tictactoe/addTurn/" + square)
     .then(res => res.json())
-    .then(res => updateTable(res.tictactoe.game))
+    .then(res => updateGame(res.tictactoe.game))
     .catch(error => console.log('Error:', error));
 };
 
