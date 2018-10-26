@@ -11,25 +11,58 @@
   <link rel="manifest" href="site.webmanifest"/>
   <link rel="apple-touch-icon" href="icon.png">
   <link rel="manifest" href="/manifest.json">
+  <style>
+    body {
+      margin-top: 10%;
+      margin-bottom: 10%;
+      text-align: center;
+      font-family: "Sans-serif", verdana;
+      background-color: rgb(156, 87, 123);
+    }
+    table {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    tr, td, table {
+      border-collapse: collapse;
+      margin: 0 auto;
+    }
+    td {
+      height: 80px;
+      width: 80px;
+    }
+    #s0, #s1, #s3, #s4 {
+      border-right: 2px solid black;
+      border-bottom: 2px solid black;
+    }
+    #s2, #s5 {
+      border-bottom: 2px solid black;
+    }
+    #s6, #s7 {
+      border-right: 2px solid black;
+    }
+  </style>
+
 </head>
+
 <body>
   <h1>Tic Tac Toe</h1>
 
   <table id="board">
     <tr>
-      <td class="square" id="0"</td>
-      <td class="square" id="1"</td>
-      <td class="square" id="2"</td>
+      <td class="square" id="s0"</td>
+      <td class="square" id="s1"</td>
+      <td class="square" id="s2"</td>
     </tr>
     <tr>
-      <td class="square" id="3"</td>
-      <td class="square" id="4"</td>
-      <td class="square" id="5"</td>
+      <td class="square" id="s3"</td>
+      <td class="square" id="s4"</td>
+      <td class="square" id="s5"</td>
     </tr>
     <tr>
-      <td class="square" id="6"</td>
-      <td class="square" id="7"</td>
-      <td class="square" id="8"</td>
+      <td class="square" id="s6"</td>
+      <td class="square" id="s7"</td>
+      <td class="square" id="s8"</td>
     </tr>
   </table>
 

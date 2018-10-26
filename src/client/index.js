@@ -24,7 +24,8 @@ function updateGame(tictactoe) {
 
 function updateTable(game) {
 	for (var i = 0; i < game.length; i++)  {
-    	var square = document.getElementById(i);
+    	var square = document.getElementById('s'+ i);
+      console.log(square);
     	square.innerHTML = game[i];
     }
 }
@@ -79,13 +80,12 @@ document.getElementById("resetGame").onclick = function(){
     })
 };
 
-document.getElementById("0").onclick = function(){addMove('0')};
-document.getElementById("1").onclick = function(){addMove('1')};
-document.getElementById("2").onclick = function(){addMove('2')};
-document.getElementById("3").onclick = function(){addMove('3')};
-document.getElementById("4").onclick = function(){addMove('4')};
-document.getElementById("5").onclick = function(){addMove('5')};
-document.getElementById("6").onclick = function(){addMove('6')};
-document.getElementById("7").onclick = function(){addMove('7')};
-document.getElementById("8").onclick = function(){addMove('8')};
-
+document.getElementById("s0").onclick = function(){addMove('0')};
+document.getElementById("s1").onclick = function(){addMove('1')};
+document.getElementById("s2").onclick = function(){addMove('2')};
+document.getElementById("s3").onclick = function(){addMove('3')};
+document.getElementById("s4").onclick = function(){addMove('4')};
+document.getElementById("s5").onclick = function(){addMove('5')};
+document.getElementById("s6").onclick = function(){addMove('6')};
+document.getElementById("s7").onclick = function(){addMove('7')};
+document.getElementById("s8").onclick = function(){addMove('8')};
