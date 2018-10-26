@@ -45,14 +45,19 @@ test("getOscore should return 1", () => {
   expect(getOscore()).toBe(1);
 });
 
-test("updateTable should return X when updating position 1", () => {
-  expect(updateTable(1).game[1]).toBe('X');
+test("updateGame should return X when updating position 1", () => {
+  expect(updateGame(1).game[1]).toBe('X');
 });
 
-test("updateTable should return X, not O", () => {
-  updateTable(1);
+test("updateGame should return X for position 2", () => {
+  var object = {"object": '2'}
+  expect(updateGame(object.object).game[2]).toBe('X');
+});
+
+test("updateGame should return X, not O", () => {
+  updateGame(1);
   flipMark();
-  expect(updateTable(1).game[1]).toBe('X');
+  expect(updateGame(1).game[1]).toBe('X');
 });
 
 test("playAgain should clean table", () => {
