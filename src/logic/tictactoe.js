@@ -56,7 +56,7 @@ flipMark = function() {
 updateTable = function(square) {
   if (table[square] !== 'O' && table[square] !== 'X') {
     count++; 
-    table[square] = mark;
+    table[parseInt(square)] = mark;
   }
   return tictactoe();
 }

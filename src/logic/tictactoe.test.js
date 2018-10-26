@@ -49,6 +49,11 @@ test("updateTable should return X when updating position 1", () => {
   expect(updateTable(1).game[1]).toBe('X');
 });
 
+test("updateTable should return X for position 2", () => {
+  var object = {"object": '2'}
+  expect(updateTable(object.object).game[2]).toBe('X');
+});
+
 test("updateTable should return X, not O", () => {
   updateTable(1);
   flipMark();

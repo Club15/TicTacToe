@@ -7,45 +7,38 @@ function getTable(){
     )
     .then(function (body) {
     	var game = body.tictactoe.game;
-    	for (var i = 0; i < game.length; i++)  {
-    		var square = document.getElementById(i);
-    		square.innerHTML = game[i];
-    	}
+    	updateTable(game);
     })
 }
-
-
 getTable();
 
-function updateTable(number){
-    var data = {square : number};
-    console.log(data);
+function updateTable(game) {
+	console.log(game);
+	for (var i = 0; i < game.length; i++)  {
+    	var square = document.getElementById(i);
+    	square.innerHTML = game[i];
+    }
+}
 
+function addMove(number){
+    var square = {square : number};
     fetch('/api/tictactoe/addTurn', {
         method: "POST",
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
+        body: JSON.stringify(square),
+        headers: {"Content-Type":  "application/json; charset=utf-8"}
     })
     .then(res => res.json())
-    .then(response => console.log('Success:', JSON.stringify(response)))
-    .catch(error => console.error('Error:', error));
+    .then(response => updateTable(response.tictactoe.game))
+    .catch(error => console.log('Error:', error));
 };
 
+document.getElementById("0").onclick = function(){addMove('0')};
+document.getElementById("1").onclick = function(){addMove('1')};
+document.getElementById("2").onclick = function(){addMove('2')};
+document.getElementById("3").onclick = function(){addMove('3')};
+document.getElementById("4").onclick = function(){addMove('4')};
+document.getElementById("5").onclick = function(){addMove('5')};
+document.getElementById("6").onclick = function(){addMove('6')};
+document.getElementById("7").onclick = function(){addMove('7')};
+document.getElementById("8").onclick = function(){addMove('8')};
 
-document.getElementById("0").onclick = function(){updateTable(0)};
-document.getElementById("1").onclick = function(){updateTable(1)};
-document.getElementById("2").onclick = function(){updateTable(2)};
-document.getElementById("3").onclick = function(){updateTable(3)};
-document.getElementById("4").onclick = function(){updateTable(4)};
-document.getElementById("5").onclick = function(){updateTable(5)};
-document.getElementById("6").onclick = function(){updateTable(6)};
-document.getElementById("7").onclick = function(){updateTable(7)};
-document.getElementById("8").onclick = function(){updateTable(8)};
-
-function blob(number) {
-	console.log(number);
-	alert(number);
-};
