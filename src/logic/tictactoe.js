@@ -57,13 +57,28 @@ flipMark = function() {
   return mark;
 }
 
-//updates an index (square) to ether X or O in the table array (table)
-updateTable = function(square) {
-  if (table[square] !== 'O' && table[square] !== 'X') {
-    count++; 
-    table[square] = mark;
+updateGame = function(square) {
+  if (updateTable(square)) {
+    if (isWinner()) {
+      updateScore();
+    }
+    else {
+      flipMark();
+    }
   }
   return tictactoe();
+}
+
+//updates an index (square) to ether X or O in the table array (table)
+updateTable = function(square) {
+  //square = Math.floor(Math.random() * (8 - 0 + 1)) + 0;
+  var i = parseInt(square);
+  if (table[i] !== 'O' && table[i] !== 'X') {
+    count++; 
+    table[i] = mark;
+    return true;
+  }
+  return false;
 }
 
 //updates the score for ether player O or X
