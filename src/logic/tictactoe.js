@@ -52,6 +52,15 @@ flipMark = function() {
   return mark;
 }
 
+updateGame = function(square) {
+  if (updateTable(square)) {
+    if (!isWinner()) {
+      flipMark();
+    }
+  }
+  return tictactoe();
+}
+
 //updates an index (square) to ether X or O in the table array (table)
 updateTable = function(square) {
   square = Math.floor(Math.random() * (8 - 0 + 1)) + 0;
@@ -59,8 +68,9 @@ updateTable = function(square) {
   if (table[i] !== 'O' && table[i] !== 'X') {
     count++; 
     table[i] = mark;
+    return true;
   }
-  return tictactoe();
+  return false;
 }
 
 //updates the score for ether player O or X
