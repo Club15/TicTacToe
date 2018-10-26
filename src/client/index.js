@@ -1,4 +1,5 @@
-const _ = require("lodash");
+//const _ = require("lodash");
+const fetch = require('node-fetch');
 
 function getTable(){
     fetch('/api/tictactoe')
@@ -37,6 +38,14 @@ function updateScore(score) {
 }
 
 function addMove(number){
+    var square = number;
+    fetch("/api/tictactoe/addTurn/" + square)
+    .then(res => res.json())
+    .then(res => updateTable(res.tictactoe.game))
+    .catch(error => console.log('Error:', error));
+};
+
+/*function addMove(number){
     var square = {square : number};
     fetch('/api/tictactoe/addTurn', {
         method: "POST",
@@ -46,7 +55,7 @@ function addMove(number){
     .then(res => res.json())
     .then(res => updateTable(res.tictactoe.game))
     .catch(error => console.log('Error:', error));
-};
+};*/
 
 document.getElementById("playAgain").onclick = function(){
 	fetch('/api/tictactoe/playAgain')

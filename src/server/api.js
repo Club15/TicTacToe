@@ -20,11 +20,24 @@ router.get("/tictactoe/", (req, res) => {
   res.status(200).send({ tictactoe: tictactoe() });
 });
 
-router.post("/tictactoe/addTurn", (req, res) => {	
+router.get("/tictactoe/addTurn/", (req, res) => {	
+  var req = req;
+  var res = res;
   //var square = req.body.square;
   console.log(req);
-  res.status(200).send({ tictactoe: updateGame(req) });
+  res.status(200).send({ tictactoe: updateGame(req.square) });
 });
+
+
+
+router.get("/tictactoe/addTurn/:square", (req, res) => {	
+  var req = req;
+  var res = res;
+  //var square = req.body.square;
+  console.log(req);
+  res.status(200).send({ tictactoe : updateGame(req.params.square) });
+});
+
 
 router.get("/tictactoe/playAgain", (req, res) => {
   res.status(200).send({ tictactoe: playAgain() });
