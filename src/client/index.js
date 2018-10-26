@@ -15,11 +15,11 @@ getTable();
 
 function updateGame(tictactoe) {
 	var game = tictactoe.game;
-	var mark = tictactoe.mark;
-	var score = tictactoe.score;
+    var score = tictactoe.score;
+    var message = tictactoe.message;
 	updateTable(game);
-	updateMark(mark);
-	updateScore(score);
+    updateScore(score);
+    updateMessage(message);
 }
 
 function updateTable(game) {
@@ -30,12 +30,15 @@ function updateTable(game) {
     }
 }
 
-function updateMark(mark) {
-	console.log(mark);
+function updateMessage(message) {
+    document.getElementById("msg").innerHTML = message;
 }
 
 function updateScore(score) {
-	console.log(score);
+    var scoreX = score.scoreX;
+    var scoreO = score.scoreO;
+    document.getElementById("scoreX").innerHTML = "Score X: " + scoreX;
+    document.getElementById("scoreO").innerHTML = "Score O: " + scoreO;
 }
 
 function addMove(number){
