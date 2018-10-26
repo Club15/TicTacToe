@@ -10,10 +10,9 @@
 //returns the table, who's turn it is and scores
 tictactoe = function() {
   var t = getTable();
-  var m = getMark();
+  var m = getMessage();
   var s = getScore();
-  var msg = getMessage();
-  var tictactoe = {"game": t, "mark": m, "score": s, "message": msg};
+  var tictactoe = {"game": t, "message": m, "score": s};
   return tictactoe;
 }
 

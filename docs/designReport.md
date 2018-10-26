@@ -1,10 +1,10 @@
 # Design Report
 
-#### About the project
+#### About the project 
 The project was to build the game Tic Tac Toe using the programing language Java script. The logic of the game was coded using test driven development and the code was loosely coupled. The project is stored in the source control system GitHub. Circle CI is used in the project to run all the test automatically when a new version is pushed to GitHub. Heroku is used to set up a web interface for the game and also to deploy the game automatically.  
 
 #### User Requirements
-Here are the user requirements for the game Tic Tac Toe. They are ordered so that the first requirement is the most important one.
+Here are the user requirements for the game Tic Tac Toe. They are ordered so that the first requirement is the most important one. 
 
 As a user I want to be able to:
 1. see the gameboard so that I can play the game.
@@ -16,7 +16,7 @@ As a user I want to be able to:
 
 ## Logic Design
 
-###### For first requirement:
+###### For first requirement: 
 - we are going to make an array to keep track of the gameboard.
 - we create a function that returns the array.
 
