@@ -25,11 +25,33 @@ function addMove(number){
     fetch('/api/tictactoe/addTurn', {
         method: "POST",
         body: JSON.stringify(square),
-        headers: {"Content-Type":  "application/json; charset=utf-8"}
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json'}
     })
     .then(res => res.json())
-    .then(response => updateTable(response.tictactoe.game))
+    .then(res => updateTable(res.tictactoe.game))
     .catch(error => console.log('Error:', error));
+};
+
+document.getElementById("playAgain").onclick = function(){
+	fetch('/api/tictactoe/playAgain')
+    .then(res =>
+        res.json()
+    )
+    .then(function (body) {
+    	var game = body.tictactoe.game;
+    	updateTable(game);
+    })
+};
+
+document.getElementById("resetGame").onclick = function(){
+	fetch('/api/tictactoe/resetGame')
+    .then(res =>
+        res.json()
+    )
+    .then(function (body) {
+    	var game = body.tictactoe.game;
+    	updateTable(game);
+    })
 };
 
 document.getElementById("0").onclick = function(){addMove('0')};

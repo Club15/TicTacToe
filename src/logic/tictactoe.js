@@ -54,9 +54,11 @@ flipMark = function() {
 
 //updates an index (square) to ether X or O in the table array (table)
 updateTable = function(square) {
-  if (table[square] !== 'O' && table[square] !== 'X') {
+  square = Math.floor(Math.random() * (8 - 0 + 1)) + 0;
+  var i = parseInt(square);
+  if (table[i] !== 'O' && table[i] !== 'X') {
     count++; 
-    table[parseInt(square)] = mark;
+    table[i] = mark;
   }
   return tictactoe();
 }
