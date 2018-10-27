@@ -14,5 +14,7 @@
 
 ###### More information about the program can be accessed here:
 [Administrator manual](https://github.com/Club15/TicTacToe/blob/master/docs/adminManual.md)
+
 [Development manual](https://github.com/Club15/TicTacToe/blob/master/docs/devManual.md)
+
 [Design report](https://github.com/Club15/TicTacToe/blob/master/docs/designReport.md)
