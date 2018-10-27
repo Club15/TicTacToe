@@ -10,7 +10,7 @@
     "start": "node server",
     "server": "webpack-dev-server",
     "build": "webpack",
-    "startapp": "npm run start | npm run server",
+    "startapp": "npm run server | npm run start",
     "heroku-postbuild": "webpack -p"
   },
   "repository": {
