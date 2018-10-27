@@ -24,3 +24,13 @@ describe("GET /api/tictactoe/", () => {
     expect(res.body).toHaveProperty("tictactoe");
   });
 });
+
+
+describe("GET /tictactoe/addTurn/:square", () => {
+  it("should return an updated table", async () => {
+    const res = await request(app).get("/api/tictactoe/addTurn/1");
+    expect(res.status).toBe(200);
+    //expect(res.body.tictactoe.game).toBe(['0','X','2','3','4','5','6','7','8']);
+    expect(res.body.tictactoe.game[1]).toBe('X');
+  });
+});
