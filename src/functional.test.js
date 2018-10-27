@@ -7,6 +7,7 @@ describe("TicTacToe", () => {
     beforeEach(async () => {
         browser = await puppeteer.launch();
         page = await browser.newPage();
+
     });
 
     afterEach(() => {
@@ -35,7 +36,8 @@ describe("TicTacToe", () => {
         //reset game
         await page.click('#resetGame'); 
         //wait for game to reload data
-        await page.waitFor(500);  
+        await page.waitFor(500); 
+        //check if the player is X
         const message = await page.evaluate(el => el.innerHTML, await page.$('h2'));
         expect(message).toBe("Its X turn!");
     });
@@ -84,4 +86,28 @@ describe("TicTacToe", () => {
             const message = await page.evaluate(el => el.innerHTML, await page.$('#msg'));
             expect(message).toBe("Its O turn!");
         });
+
+    //Check if player O can't choose a square that has been marked
+    test("square should still be X, and it should still be Os turn", async () => {
+        const response = await page.goto(url);
+        //wait for game to load
+        await page.waitFor(500);
+        //click reset button
+        await page.click('#resetGame'); 
+        //wait for game to reload data
+        await page.waitFor(500);  
+        //player X click on square 0
+        await page.click('#s0');
+        //wait a bit for game to update
+        await page.waitFor(500);
+        //player O click on square 0
+        await page.click('#s0');
+        //wait a bit for game to update
+        await page.waitFor(500);
+        //check if square 0 is still marked X, and its still Os turn
+        const message = await page.evaluate(el => el.innerHTML, await page.$('#msg'));
+        const square0 = await page.evaluate(el => el.innerHTML, await page.$('#s0'));
+        expect(message).toBe("Its O turn!");
+        expect(square0).toBe("X");
+    });
 });
