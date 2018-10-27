@@ -16,20 +16,23 @@ describe("TicTacToe", () => {
 
     // Check that the server responds with a 200 status message
     test("Server responds with 200 status code", async () => {
+        jest.setTimeout(30000);
         const response = await page.goto(url);
         expect(response._status).toBe(200);
     });
 
     // Check that the page title is "Tic Tac Toe Club15"
     test("Page title is 'TicTacToe Club15'", async () => {
+        jest.setTimeout(30000);
         await page.goto(url);
         const title = await page.title();
-        expect(title).toBe("Tic Tac Toe Club15");
+        expect(title).toBe("TicTacToe Club15");
         // Check that the page title is "Google"
     });
 
     //Check if X starts in the game
     test("When starting a game, it should be X turn", async () => {
+        jest.setTimeout(30000);
         await page.goto(url); 
         //wait for game to load
         await page.waitFor(500); 
@@ -45,6 +48,7 @@ describe("TicTacToe", () => {
 
     //Check if the scores are 0 at beginning of game
     test("When starting a game, both scores should be 0", async () => {
+        jest.setTimeout(30000);
         await page.goto(url);
         //wait for game to load
         await page.waitFor(500); 
@@ -57,6 +61,7 @@ describe("TicTacToe", () => {
 
     //Check when player X clicks on a square, it gets marked by X
         test("square should be marked X by player X", async () => {
+            jest.setTimeout(30000);
             await page.goto(url);
              //wait a bit for game to load 
             await page.waitFor(500);
@@ -71,6 +76,7 @@ describe("TicTacToe", () => {
 
     //Check if player O is next when X has clicked a square
         test("square should be marked X by player X", async () => {
+            jest.setTimeout(30000);
             await page.goto(url);
             //wait for game to load
             await page.waitFor(500);
@@ -89,6 +95,7 @@ describe("TicTacToe", () => {
 
     //Check if player O can't choose a square that has been marked
     test("square should still be X, and it should still be Os turn", async () => {
+        jest.setTimeout(30000);
         await page.goto(url);
         //wait for game to load
         await page.waitFor(500);
