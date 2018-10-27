@@ -69,3 +69,14 @@ describe("GET /tictactoe/resetGame", () => {
     expect(res.body.tictactoe.game[8]).toBe('')
   });
 });
+
+//API test for clearing the table with Reset game command. scoreX = 0 and scoreO = 0
+describe("GET /tictactoe/resetGame", () => {
+  it("should have scoreX and score 0 at zero", async () => {
+    const res = await request(app).get("/api/tictactoe/resetGame");
+    expect(res.status).toBe(200);
+    expect(res.body.tictactoe.score.scoreX).toBe(0);
+    expect(res.body.tictactoe.score.scoreO).toBe(0);
+  });
+});
+
