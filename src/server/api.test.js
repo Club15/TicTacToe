@@ -38,8 +38,25 @@ describe("GET /tictactoe/addTurn/:square", () => {
 
 //API test for clearing the table with Play again command
 describe("GET /tictactoe/playAgain", () => {
-  it("the game table should be cleared, returns '' at game[1]", async () => {
+  it("the game table should be cleared at all squares", async () => {
     const res = await request(app).get("/api/tictactoe/playAgain");
+    expect(res.status).toBe(200);
+    expect(res.body.tictactoe.game[0]).toBe('');
+    expect(res.body.tictactoe.game[1]).toBe('')
+    expect(res.body.tictactoe.game[2]).toBe('')
+    expect(res.body.tictactoe.game[3]).toBe('')
+    expect(res.body.tictactoe.game[4]).toBe('')
+    expect(res.body.tictactoe.game[5]).toBe('')
+    expect(res.body.tictactoe.game[6]).toBe('')
+    expect(res.body.tictactoe.game[7]).toBe('')
+    expect(res.body.tictactoe.game[8]).toBe('')
+  });
+});
+
+//API test for clearing the table with Reset game command. Clearing the table.
+describe("GET /tictactoe/resetGame", () => {
+  it("the game table should be cleared, at all squares", async () => {
+    const res = await request(app).get("/api/tictactoe/resetGame");
     expect(res.status).toBe(200);
     expect(res.body.tictactoe.game[0]).toBe('');
     expect(res.body.tictactoe.game[1]).toBe('')
