@@ -2,6 +2,7 @@
 const request = require("supertest");
 const app = require("../app");
 
+//API test
 describe("OPTIONS /api", () => {
   it("should return 200 status code", async() => {
     const res = await request(app).options("/api");
@@ -9,6 +10,7 @@ describe("OPTIONS /api", () => {
   });
 });
 
+//API test for error
 describe("GET /api", () => {
   it("should return 405 status code and an error message", async () => {
     const res = await request(app).get("/api");
@@ -17,6 +19,7 @@ describe("GET /api", () => {
   });
 });
 
+//API test for tictactoe function. Should receive a tictactoe object
 describe("GET /api/tictactoe/", () => {
   it("should return an object with the tictactoe attribute", async () => {
     const res = await request(app).get("/api/tictactoe/");
