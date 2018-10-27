@@ -9,9 +9,10 @@
     "clean": "rm -rf node_modules",
     "start": "node server",
     "server": "webpack-dev-server",
-    "build": "webpack",
+    "build": "webpack | npm run convertmdtopdf",
     "startapp": "npm run server | npm run start",
-    "heroku-postbuild": "webpack -p"
+    "heroku-postbuild": "webpack -p",
+    "convertmdtopdf": "rm ./docs/devManual.pdf | rm ./docs/adminManual.pdf | rm ./docs/designReport.pdf | markdown-pdf ./docs/devManual.md | markdown-pdf ./docs/designReport.md | markdown-pdf ./docs/adminManual"
   },
   "repository": {
     "type": "git",
