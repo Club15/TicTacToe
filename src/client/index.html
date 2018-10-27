@@ -7,57 +7,86 @@
   <title>Tic Tac Toe Club15</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
   <link rel="manifest" href="site.webmanifest"/>
+  <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
   <link rel="apple-touch-icon" href="icon.png">
   <link rel="manifest" href="/manifest.json">
   <style>
     body {
       text-align: center;
-      font-family: "Sans-serif", verdana;
-      background-color: rgb(156, 87, 123);
+      font-family: 'Varela Round', sans-serif;
+      background-color: #3fe0d0;
+      color: #334e67;
     }
     h1 {
-      margin-top: 40px;
-      margin-bottom: 40px;
+      margin-top: 50px;
+      margin-bottom: 30px;
+      color: 	#273B4D;
     }
     #msg {
-      margin-bottom: 45px;
+      margin-bottom: 20px;
       font-size: 20px;
     }
     tr, td, table {
       border-collapse: collapse;
       margin: 0 auto;
+      cursor: pointer;
       font-size: 40px;
     }
     td {
       height: 80px;
       width: 80px;
     }
-    .square:hover {
-      background-color: rgb(192, 130, 168);
-    }
+
     #s0, #s1, #s3, #s4 {
-      border-right: 2px solid black;
-      border-bottom: 2px solid black;
+      border-right: 5px solid #334e67;
+      border-bottom: 5px solid 	#334e67;
     }
     #s2, #s5 {
-      border-bottom: 2px solid black;
+      border-bottom: 5px solid 	#334e67;
     }
     #s6, #s7 {
-      border-right: 2px solid black;
+      border-right: 5px solid	#334e67;
     }
     #scoreX {
-      margin-top: 40px;
+      margin-top: 50px;
+      margin-bottom: 5px;
     }
+    #scoreO {
+      margin-top: 0px;
+    }
+    .square{
+      font-size: 60px;
+      color: 	#2a938e;
+    }
+    #owner{
+      margin-top: 100px;
+      color: #32B2A5;
+    }
+
     button {
-      margin: 15px 6px;
+      font-family: 'Varela Round', sans-serif;
+      background-color: #62c2cc;
+      border: none;
+      padding: 3px 20px;
+      text-decoration: none;
+      font-size: 18px;
+      text-align: center;
+      align-self: auto;
+      margin:auto;
+      display:block;
       border-radius: 4px;
-      font-size: 16px;
-      padding: 4px;
+      margin-top: 9px;
+      color: inherit;
     }
-    button:hover {
-      background-color: rgb(188, 188, 188);
+    button#playAgain:hover {
+      background-color: #01DFA5;
     }
+    button#resetGame:hover {
+      background-color: #1aa6b7;
+    }
+
   </style>
 
 </head>
@@ -85,7 +114,7 @@
   <h3 id="scoreX">score x</h3>
   <h3 id="scoreO">score 0</h3>
   <button id="playAgain">Play Again</button>
-  <button id="resetGame">Reset Game</button>
+  <button id="resetGame">Reset Score</button>
   <p id="table-content"></p>
   <h5 id=owner>©2018 by club15</h5>
 </body>
