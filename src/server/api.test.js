@@ -26,6 +26,7 @@ describe("GET /api/tictactoe/", () => {
 });
 
 
+//API test for checking whether the game board is updated when the api calls the function in tictactoe
 describe("GET /tictactoe/addTurn/:square", () => {
   it("should return an updated table", async () => {
     const res = await request(app).get("/api/tictactoe/addTurn/1");
@@ -34,3 +35,13 @@ describe("GET /tictactoe/addTurn/:square", () => {
     expect(res.body.tictactoe.game[1]).toBe('X');
   });
 });
+
+//API test for clearing the table with Play again command
+describe("GET /tictactoe/playAgain", () => {
+  it("the game table should be cleared, returns '' at game[1]", async () => {
+    const res = await request(app).get("/api/tictactoe/playAgain");
+    expect(res.status).toBe(200);
+    expect(res.body.tictactoe.game[1]).toBe('');
+  });
+});
+
