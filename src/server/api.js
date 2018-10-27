@@ -2,8 +2,6 @@
 const express = require("express");
 const router = express.Router();
 const tictactoe = require("../logic/tictactoe");
-var debug = require('debug')('http');
-
 
 router.get("/", (req, res) => {
   res.status(405).send({ error: "GET method not allowed, try OPTIONS."});
@@ -21,10 +19,6 @@ router.get("/tictactoe/", (req, res) => {
 });
 
 router.get("/tictactoe/addTurn/:square", (req, res) => {
-  var req = req;
-  var res = res;
-  //var square = req.body.square;
-  console.log(req);
   res.status(200).send({ tictactoe : updateGame(req.params.square) });
 });
 
