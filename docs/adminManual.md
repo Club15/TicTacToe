@@ -1,6 +1,7 @@
 # Administration manual
 
-When taking over this program you have to have/create an account with Github, Heroku and CircleCI to be able to maintain the app. You also have to download and install Node, Npm and Heroku.
+When taking over this program a number of accounts, programs and dependencies have to be set up. This manual will go through the different steps to be able to host, run and further develop the program. In short, a Github account, Heroku and Circle CI account has to be made to maintain the app. Furthermore, for all functions and test environment of the TicTacToe app to work Node.js, Npm and Heroku have to be installed locally.
+
 
 
 ### GitHub
@@ -58,7 +59,7 @@ The command ```npm install``` will download and install the dependencies for the
 ##### Most notable of the script commands are:
 To start both the node server and the webpack development server.
 ```sh
-    $ npm run dev
+  $ npm run startapp
 ```
 To only run the node server.
 ```sh
@@ -101,6 +102,8 @@ You can check if the connection was a succes with this command:
 ```
 
 Heroku has been set up to deploy automatically after each push to the master branch on git as long as Circle Ci gives a pass on the new code. If for some reason that needs to be changed you can go to https://www.heroku.com, select the app gameclub15, go to deploy, and there you can find Automatic Deploy and press the button Disable Automatic Deploy.
+
+To get an overview of the build history [click here](https://dashboard.heroku.com/apps/gameclub15).
 
 If you need to maintain the app you can also select settings and turn on Maintanace mode.
 
