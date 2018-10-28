@@ -9,8 +9,9 @@ jobs:
           name: update-npm
           command: 'npm install'
       - run:
-          name: build
-          command: 'npm run build'
+          name: update-pdf
+          command: 'npm run convertmdtopdf'
       - run:
           name: test npm
           command: 'npm test'
+      - run: make test | tee test-output.log
