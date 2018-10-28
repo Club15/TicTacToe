@@ -12,7 +12,7 @@
     "build": "webpack | npm run convertmdtopdf",
     "startapp": "npm run server | npm run start",
     "heroku-postbuild": "webpack -p",
-    "convertmdtopdf": "rm ./docs/devManual.pdf -f | rm ./docs/adminManual.pdf -f | rm ./docs/designReport.pdf -f | markdown-pdf ./docs/devManual.md | markdown-pdf ./docs/designReport.md | markdown-pdf ./docs/adminManual.md"
+    "convertmdtopdf": "markdown-pdf ./docs/devManual.md | markdown-pdf ./docs/designReport.md | markdown-pdf ./docs/adminManual.md"
   },
   "repository": {
     "type": "git",
