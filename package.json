@@ -12,13 +12,13 @@
     "build": "webpack | npm run convertmdtopdf",
     "startapp": "npm run server | npm run start",
     "heroku-postbuild": "webpack -p",
-    "convertmdtopdf": "rm ./docs/devManual.pdf | rm ./docs/adminManual.pdf | rm ./docs/designReport.pdf | markdown-pdf ./docs/devManual.md | markdown-pdf ./docs/designReport.md | markdown-pdf ./docs/adminManual"
+    "convertmdtopdf": "rm ./docs/devManual.pdf -f | rm ./docs/adminManual.pdf -f | rm ./docs/designReport.pdf -f | markdown-pdf ./docs/devManual.md | markdown-pdf ./docs/designReport.md | markdown-pdf ./docs/adminManual.md"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Club15/TicTacToe.git"
   },
-  "author": "",
+  "author": "Club15",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Club15/TicTacToe/issues"
