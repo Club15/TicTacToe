@@ -14,4 +14,3 @@ jobs:
       - run:
           name: test npm
           command: 'npm test'
-      - run: make test | tee test-output.log
