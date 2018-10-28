@@ -6,16 +6,11 @@ jobs:
     steps:
       - checkout
       - run:
-          name: update-npm 
+          name: update-npm
           command: 'npm install'
+      - run:
+          name: build
+          command: 'npm run build'
       - run:
           name: test npm
           command: 'npm test'
-
-
-
-  #Þarf að run puppiter test líka ef við náum því  
-  # push to heroku https://circleci.com/integrations/heroku/
-
-
-
