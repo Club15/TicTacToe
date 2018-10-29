@@ -4,7 +4,7 @@
   "description": "lateTermAssignment",
   "main": "index.js",
   "scripts": {
-    "test": "jest —coverage",
+    "test": "jest --coverage",
     "watch": "jest --watchAll",
     "clean": "rm -rf node_modules",
     "start": "node server",
