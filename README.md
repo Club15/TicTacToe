@@ -20,3 +20,6 @@
 [Development manual](https://github.com/Club15/TicTacToe/blob/master/docs/devManual.md)
 
 [Design report](https://github.com/Club15/TicTacToe/blob/master/docs/designReport.md)
+
+
+[Imgur](https://i.imgur.com/FWDEwSG.jpg)
