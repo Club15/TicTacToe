@@ -22,4 +22,6 @@
 [Design report](https://github.com/Club15/TicTacToe/blob/master/docs/designReport.md)
 
 
-[Imgur](https://i.imgur.com/FWDEwSG.jpg)
+![Group Photo](https://imgur.com/FWDEwSG)
+
+
