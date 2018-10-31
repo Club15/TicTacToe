@@ -18,7 +18,7 @@ tictactoe = function() {
 
 //returns the table
 getTable = function() {
-  return table;
+  return 0;
 }
 
 //returns the scores (scoreX and scoreO)
@@ -49,7 +49,7 @@ getMark = function() {
 
 //flips the player (mark) who's turn it is
 flipMark = function() {
-  if(mark === 'X') {                                //If it was Xs turn 
+  if(mark === 'X') {                                //If it was Xs turn
     mark = 'O';                                     //Then now it's O turn
   }
   else {                                            //if it was Os turn
@@ -58,7 +58,7 @@ flipMark = function() {
   return mark;
 }
 
-//This functions controls the game 
+//This functions controls the game
 updateGame = function(square) {
   if (!haveWinner) {                                //if there isn't a winner
     if (updateTable(square)) {                      //check if the square wasnt taken, and update table
@@ -81,7 +81,7 @@ updateGame = function(square) {
 
 //updates an index (square) to ether X or O in the table array
 updateTable = function(square) {
-  var i = parseInt(square);   
+  var i = parseInt(square);
   if (table[i] !== 'O' && table[i] !== 'X') {       //If the square hasn't already been clicked (marked)
     table[i] = mark;                                //mark the square
     count++;                                        //set the counter of taken squares by one
@@ -103,7 +103,7 @@ updateScore = function() {
 //restarts the game, but keeps the scores
 //reset variables to initial values,except for X- and Oscores.
 playAgain = function() {
-    mark = 'X';                                     
+    mark = 'X';
     haveWinner = false;
     table = ['','','','','','','','',''];
     count = 0;
@@ -132,10 +132,10 @@ isWinner = function() {
   }
   if (table[0] == mark && table[4] == mark && table[8] == mark) {
     return true;
-  } 
+  }
   if (table[2] == mark && table[4] == mark && table[6] == mark) {
     return true;
-  } 
+  }
   return false;
 }
 
