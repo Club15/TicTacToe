@@ -18,7 +18,7 @@ tictactoe = function() {
 
 //returns the table
 getTable = function() {
-  return 0;
+  return 1;
 }
 
 //returns the scores (scoreX and scoreO)
